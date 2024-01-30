@@ -21,7 +21,7 @@ async fn archivo_estatico(req: HttpRequest) -> Result<NamedFile, Error> {
 
     // Notar el "?" al final de la linea, esto permitira regresar un Error
     // si no se puede abrir o encontrar el archivo entonces se traduce en un error
-    // con status HTTP 502 (archivo no encontrado)
+    // con status HTTP 404 (archivo no encontrado)
     let archivo = NamedFile::open(ruta_string)?;
 
     // Si el archivo es encontrado, entonces devolvemos la ultima version
